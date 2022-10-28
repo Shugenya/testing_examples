@@ -1,0 +1,330 @@
+{
+  "info": {
+    "_postman_id": "b52e06b0-8008-40da-a07a-b76b554e7398",
+    "name": "Food data",
+    "description": "The FoodData Central API provides REST access to FoodData Central (FDC).\n\nIt is intended primarily to assist application developers wishing to incorporate nutrient data into their applications or websites.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Food details",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "62e0aff4-7b54-4caa-9a6e-4f6ae00ec13c",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.eq(200);\r",
+              "});\r",
+              "\r",
+              "var json = pm.response.json();\r",
+              "\r",
+              "pm.test(\"Result has data of the correct food\", function () {\r",
+              "    pm.expect(json, \"Result data is empty\").to.not.be.empty;\r",
+              "    pm.expect(json.fdcId).to.be.eq(328637);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"All Nutritional values exist\", function () {\r",
+              "    pm.expect(json.foodNutrients).to.not.be.empty;\r",
+              "    var kcal;\r",
+              "    var protein;\r",
+              "    var fats;\r",
+              "    var carbs;\r",
+              "\r",
+              "    json.foodNutrients.forEach((nutrient) => {\r",
+              "        var name = nutrient.nutrient.name;    \r",
+              "\r",
+              "        if(name == \"Energy\" && nutrient.nutrient.unitName == \"kcal\"){\r",
+              "            kcal = nutrient.amount;\r",
+              "        }\r",
+              "        else if (name == \"Protein\"){\r",
+              "            protein = nutrient.amount;\r",
+              "        }\r",
+              "        else if (name == \"Total lipid (fat)\"){\r",
+              "            fats = nutrient.amount;\r",
+              "        }\r",
+              "        else if (name == \"Carbohydrate, by difference\"){\r",
+              "            carbs = nutrient.amount;\r",
+              "        }\r",
+              "    });\r",
+              "\r",
+              "    pm.expect(kcal, \"Kcal data don't exist\").to.not.be.undefined;\r",
+              "    pm.expect(protein, \"Protein data don't exist\").to.not.be.undefined;\r",
+              "    pm.expect(fats, \"Fats data don't exist\").to.not.be.undefined;\r",
+              "    pm.expect(carbs, \"Carbs data don't exist\").to.not.be.undefined;    \r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "49767c4a-4e56-46cb-b921-9e141a8d157c",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": {
+            "in": "header",
+            "key": "x-api-key",
+            "value": "DEMO_KEY"
+          }
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://api.nal.usda.gov/fdc/v1/food/328637"
+      },
+      "response": []
+    },
+    {
+      "name": "Food details - non existing ID",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "62e0aff4-7b54-4caa-9a6e-4f6ae00ec13c",
+            "exec": [
+              "pm.test(\"Status code is 404\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.eq(404);\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "ab15ddf9-bff9-4e5b-8a29-dcd283157f38",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": {
+            "in": "header",
+            "key": "x-api-key",
+            "value": "DEMO_KEY"
+          }
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://api.nal.usda.gov/fdc/v1/food/32863"
+      },
+      "response": []
+    },
+    {
+      "name": "Search - no API key",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "6862645a-97af-4da9-9660-8f6f3e5b62bd",
+            "exec": [
+              "pm.test(\"Request without api key is rejected\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.eq(403);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response contains correct error code\", function () {\r",
+              "    var json = pm.response.json();\r",
+              "    pm.expect(json.error.code).to.be.eq(\"API_KEY_MISSING\");\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "de866a6d-4932-4717-ba57-0455e95e6af9",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"query\": \"cheese,cheddar\",\r\n  \"pageSize\": 25\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://api.nal.usda.gov/fdc/v1/foods/search"
+      },
+      "response": []
+    },
+    {
+      "name": "Search - by name",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "adc69fae-1595-452e-9f88-88ad4d3e1bbe",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.eq(200);\r",
+              "});\r",
+              "\r",
+              "var json = pm.response.json();\r",
+              "\r",
+              "pm.test(\"Result list is not empty\", function () {\r",
+              "    pm.expect(json.foods).to.not.be.empty;\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Each result in the list is cheddar cheese\", function () {\r",
+              "    json.foods.forEach((food) => {\r",
+              "        var description = food.description.toLowerCase();\r",
+              "        pm.expect(description).to.contain(\"cheddar\");\r",
+              "        pm.expect(description).to.contain(\"cheese\");\r",
+              "    });\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "38a3b9fb-90ee-4148-a3dd-c04d50e733e6",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": {
+            "in": "header",
+            "key": "x-api-key",
+            "value": "DEMO_KEY"
+          }
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"query\": \"cheese,cheddar\",\r\n  \"dataType\": [\r\n    \"Foundation\",\r\n    \"SR Legacy\"\r\n  ],\r\n  \"pageSize\": 10\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://api.nal.usda.gov/fdc/v1/foods/search"
+      },
+      "response": []
+    },
+    {
+      "name": "Search - by brand owner",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "adc69fae-1595-452e-9f88-88ad4d3e1bbe",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.eq(200);\r",
+              "});\r",
+              "\r",
+              "var json = pm.response.json();\r",
+              "\r",
+              "pm.test(\"Result list is not empty\", function () {\r",
+              "    pm.expect(json.foods).to.not.be.empty;\r",
+              "});\r",
+              "\r",
+              "pm.test(\"All results have correct brand owner\", function () {\r",
+              "    json.foods.forEach((food) => \r",
+              "        pm.expect(food.brandOwner.toLowerCase()).to.be.eq(\"kar nut products company\", \"Result with id \" + food.fdcId + \" has different brand owner: \")\r",
+              "    );\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "bcd45066-4a6c-4578-9476-32f4ec8aa00e",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": {
+            "in": "header",
+            "key": "x-api-key",
+            "value": "DEMO_KEY"
+          }
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"dataType\": [\r\n    \"Branded\"\r\n  ],\r\n  \"pageSize\": 25,\r\n  \"brandOwner\": \"Kar Nut Products Company\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://api.nal.usda.gov/fdc/v1/foods/search"
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": {
+      "value": "DEMO_KEY",
+      "key": "X-Api-Key",
+      "in": "header"
+    }
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "e8d871ee-e359-4395-9634-1b1576f0e224",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "c36c1127-9fae-4419-94bd-44c3aa66fc25",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "3fef0a6a-1e1c-4011-96d4-79b2719455c9",
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="TC 001 Search product" timestamp="2022-10-10T22:12:48" time="21.433" tests="5" failures="1" errors="1" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="TC_001 Search product"/>
+      <property name="capabilities" value="chrome.105_0_5195_127.windows"/>
+      <property name="file" value=".\test\specs\001_search.js"/>
+    </properties>
+    <testcase classname="chrome.105_0_5195_127.windows.TC_001_Search_product" name="Should click on search field" time="6.324">
+      <system-out><![CDATA[
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/url - {"url":"http://automationpractice.multiformis.com/"}
+RESULT: {"url":"http://automationpractice.multiformis.com/"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element - {"using":"css selector","value":"#search_query_top"}
+RESULT: {"using":"css selector","value":"#search_query_top"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/33c831f5-1703-4cad-bad1-daca7be9d019/click - {}
+RESULT: {}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/execute/sync - {"script":"return (function isFocused(elem) {\n    return elem === document.activeElement;\n}).apply(null, arguments)","args":[{"element-6066-11e4-a52e-4f735466cecf":"33c831f5-1703-4cad-bad1-daca7be9d019","ELEMENT":"33c831f5-1703-4cad-bad1-daca7be9d019"}]}
+RESULT: {"script":"return (function isFocused(elem) {\n    return elem === document.activeElement;\n}).apply(null, arguments)","args":[{"element-6066-11e4-a52e-4f735466cecf":"33c831f5-1703-4cad-bad1-daca7be9d019","ELEMENT":"33c831f5-1703-4cad-bad1-daca7be9d019"}]}
+]]></system-out>
+    </testcase>
+    <testcase classname="chrome.105_0_5195_127.windows.TC_001_Search_product" name="Should verify suggestion list" time="1.614">
+      <system-out><![CDATA[
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element - {"using":"css selector","value":"#search_query_top"}
+RESULT: {"using":"css selector","value":"#search_query_top"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/33c831f5-1703-4cad-bad1-daca7be9d019/clear - {}
+RESULT: {}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/33c831f5-1703-4cad-bad1-daca7be9d019/value - {"text":"dress"}
+RESULT: {"text":"dress"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/elements - {"using":"css selector","value":".ac_results li"}
+RESULT: {"using":"css selector","value":".ac_results li"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/elements - {"using":"css selector","value":".ac_results li"}
+RESULT: {"using":"css selector","value":".ac_results li"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/elements - {"using":"css selector","value":".ac_results li"}
+RESULT: {"using":"css selector","value":".ac_results li"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/elements - {"using":"css selector","value":".ac_results li"}
+RESULT: {"using":"css selector","value":".ac_results li"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/elements - {"using":"css selector","value":".ac_results li"}
+RESULT: {"using":"css selector","value":".ac_results li"}
+]]></system-out>
+    </testcase>
+    <testcase classname="chrome.105_0_5195_127.windows.TC_001_Search_product" name="Should click on search icon" time="2.399">
+      <system-out><![CDATA[
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element - {"using":"css selector","value":".button-search"}
+RESULT: {"using":"css selector","value":".button-search"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/ce37e149-fe8b-4fff-ab97-6b82174b9c0a/click - {}
+RESULT: {}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element - {"using":"css selector","value":"#product_list"}
+RESULT: {"using":"css selector","value":"#product_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7756 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"7682e26c-6f61-4809-844c-93d33ef5302a","ELEMENT":"7682e26c-6f61-4809-844c-93d33ef5302a"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7756 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"7682e26c-6f61-4809-844c-93d33ef5302a","ELEMENT":"7682e26c-6f61-4809-844c-93d33ef5302a"}]}
+]]></system-out>
+    </testcase>
+    <testcase classname="chrome.105_0_5195_127.windows.TC_001_Search_product" name="Should all products have image name price color list and availability" time="0.936">
+      <system-out><![CDATA[
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element - {"using":"css selector","value":"#product_list"}
+RESULT: {"using":"css selector","value":"#product_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/7682e26c-6f61-4809-844c-93d33ef5302a/elements - {"using":"css selector","value":"li.ajax_block_product"}
+RESULT: {"using":"css selector","value":"li.ajax_block_product"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/75b911c1-117c-4276-8751-c8d66a9e4664/element - {"using":"css selector","value":"img"}
+RESULT: {"using":"css selector","value":"img"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/75b911c1-117c-4276-8751-c8d66a9e4664/elements - {"using":"css selector","value":"img"}
+RESULT: {"using":"css selector","value":"img"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/75b911c1-117c-4276-8751-c8d66a9e4664/element - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/75b911c1-117c-4276-8751-c8d66a9e4664/elements - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/75b911c1-117c-4276-8751-c8d66a9e4664/element - {"using":"css selector","value":".product-price"}
+RESULT: {"using":"css selector","value":".product-price"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/75b911c1-117c-4276-8751-c8d66a9e4664/elements - {"using":"css selector","value":".product-price"}
+RESULT: {"using":"css selector","value":".product-price"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/75b911c1-117c-4276-8751-c8d66a9e4664/element - {"using":"css selector","value":".color_to_pick_list"}
+RESULT: {"using":"css selector","value":".color_to_pick_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/75b911c1-117c-4276-8751-c8d66a9e4664/elements - {"using":"css selector","value":".color_to_pick_list"}
+RESULT: {"using":"css selector","value":".color_to_pick_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/75b911c1-117c-4276-8751-c8d66a9e4664/element - {"using":"css selector","value":".availability"}
+RESULT: {"using":"css selector","value":".availability"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/75b911c1-117c-4276-8751-c8d66a9e4664/elements - {"using":"css selector","value":".availability"}
+RESULT: {"using":"css selector","value":".availability"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/681e9999-d810-43d9-9036-195aaec66467/element - {"using":"css selector","value":"img"}
+RESULT: {"using":"css selector","value":"img"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/681e9999-d810-43d9-9036-195aaec66467/elements - {"using":"css selector","value":"img"}
+RESULT: {"using":"css selector","value":"img"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/681e9999-d810-43d9-9036-195aaec66467/element - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/681e9999-d810-43d9-9036-195aaec66467/elements - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/681e9999-d810-43d9-9036-195aaec66467/element - {"using":"css selector","value":".product-price"}
+RESULT: {"using":"css selector","value":".product-price"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/681e9999-d810-43d9-9036-195aaec66467/elements - {"using":"css selector","value":".product-price"}
+RESULT: {"using":"css selector","value":".product-price"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/681e9999-d810-43d9-9036-195aaec66467/element - {"using":"css selector","value":".color_to_pick_list"}
+RESULT: {"using":"css selector","value":".color_to_pick_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/681e9999-d810-43d9-9036-195aaec66467/elements - {"using":"css selector","value":".color_to_pick_list"}
+RESULT: {"using":"css selector","value":".color_to_pick_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/681e9999-d810-43d9-9036-195aaec66467/element - {"using":"css selector","value":".availability"}
+RESULT: {"using":"css selector","value":".availability"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/681e9999-d810-43d9-9036-195aaec66467/elements - {"using":"css selector","value":".availability"}
+RESULT: {"using":"css selector","value":".availability"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/b40c51ed-3a31-4ee3-a9da-b42fee1b3b70/element - {"using":"css selector","value":"img"}
+RESULT: {"using":"css selector","value":"img"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/b40c51ed-3a31-4ee3-a9da-b42fee1b3b70/elements - {"using":"css selector","value":"img"}
+RESULT: {"using":"css selector","value":"img"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/b40c51ed-3a31-4ee3-a9da-b42fee1b3b70/element - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/b40c51ed-3a31-4ee3-a9da-b42fee1b3b70/elements - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/b40c51ed-3a31-4ee3-a9da-b42fee1b3b70/element - {"using":"css selector","value":".product-price"}
+RESULT: {"using":"css selector","value":".product-price"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/b40c51ed-3a31-4ee3-a9da-b42fee1b3b70/elements - {"using":"css selector","value":".product-price"}
+RESULT: {"using":"css selector","value":".product-price"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/b40c51ed-3a31-4ee3-a9da-b42fee1b3b70/element - {"using":"css selector","value":".color_to_pick_list"}
+RESULT: {"using":"css selector","value":".color_to_pick_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/b40c51ed-3a31-4ee3-a9da-b42fee1b3b70/elements - {"using":"css selector","value":".color_to_pick_list"}
+RESULT: {"using":"css selector","value":".color_to_pick_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/b40c51ed-3a31-4ee3-a9da-b42fee1b3b70/element - {"using":"css selector","value":".availability"}
+RESULT: {"using":"css selector","value":".availability"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/b40c51ed-3a31-4ee3-a9da-b42fee1b3b70/elements - {"using":"css selector","value":".availability"}
+RESULT: {"using":"css selector","value":".availability"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/268f8cc0-0397-47be-9377-7e0e5255c322/element - {"using":"css selector","value":"img"}
+RESULT: {"using":"css selector","value":"img"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/268f8cc0-0397-47be-9377-7e0e5255c322/elements - {"using":"css selector","value":"img"}
+RESULT: {"using":"css selector","value":"img"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/268f8cc0-0397-47be-9377-7e0e5255c322/element - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/268f8cc0-0397-47be-9377-7e0e5255c322/elements - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/268f8cc0-0397-47be-9377-7e0e5255c322/element - {"using":"css selector","value":".product-price"}
+RESULT: {"using":"css selector","value":".product-price"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/268f8cc0-0397-47be-9377-7e0e5255c322/elements - {"using":"css selector","value":".product-price"}
+RESULT: {"using":"css selector","value":".product-price"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/268f8cc0-0397-47be-9377-7e0e5255c322/element - {"using":"css selector","value":".color_to_pick_list"}
+RESULT: {"using":"css selector","value":".color_to_pick_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/268f8cc0-0397-47be-9377-7e0e5255c322/elements - {"using":"css selector","value":".color_to_pick_list"}
+RESULT: {"using":"css selector","value":".color_to_pick_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/268f8cc0-0397-47be-9377-7e0e5255c322/element - {"using":"css selector","value":".availability"}
+RESULT: {"using":"css selector","value":".availability"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/268f8cc0-0397-47be-9377-7e0e5255c322/elements - {"using":"css selector","value":".availability"}
+RESULT: {"using":"css selector","value":".availability"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/20528cda-e17c-4547-ae4d-58160c0f57af/element - {"using":"css selector","value":"img"}
+RESULT: {"using":"css selector","value":"img"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/20528cda-e17c-4547-ae4d-58160c0f57af/elements - {"using":"css selector","value":"img"}
+RESULT: {"using":"css selector","value":"img"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/20528cda-e17c-4547-ae4d-58160c0f57af/element - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/20528cda-e17c-4547-ae4d-58160c0f57af/elements - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/20528cda-e17c-4547-ae4d-58160c0f57af/element - {"using":"css selector","value":".product-price"}
+RESULT: {"using":"css selector","value":".product-price"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/20528cda-e17c-4547-ae4d-58160c0f57af/elements - {"using":"css selector","value":".product-price"}
+RESULT: {"using":"css selector","value":".product-price"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/20528cda-e17c-4547-ae4d-58160c0f57af/element - {"using":"css selector","value":".color_to_pick_list"}
+RESULT: {"using":"css selector","value":".color_to_pick_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/20528cda-e17c-4547-ae4d-58160c0f57af/elements - {"using":"css selector","value":".color_to_pick_list"}
+RESULT: {"using":"css selector","value":".color_to_pick_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/20528cda-e17c-4547-ae4d-58160c0f57af/element - {"using":"css selector","value":".availability"}
+RESULT: {"using":"css selector","value":".availability"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/20528cda-e17c-4547-ae4d-58160c0f57af/elements - {"using":"css selector","value":".availability"}
+RESULT: {"using":"css selector","value":".availability"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d2c6cbd8-0733-4072-bac2-535316c95295/element - {"using":"css selector","value":"img"}
+RESULT: {"using":"css selector","value":"img"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d2c6cbd8-0733-4072-bac2-535316c95295/elements - {"using":"css selector","value":"img"}
+RESULT: {"using":"css selector","value":"img"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d2c6cbd8-0733-4072-bac2-535316c95295/element - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d2c6cbd8-0733-4072-bac2-535316c95295/elements - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d2c6cbd8-0733-4072-bac2-535316c95295/element - {"using":"css selector","value":".product-price"}
+RESULT: {"using":"css selector","value":".product-price"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d2c6cbd8-0733-4072-bac2-535316c95295/elements - {"using":"css selector","value":".product-price"}
+RESULT: {"using":"css selector","value":".product-price"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d2c6cbd8-0733-4072-bac2-535316c95295/element - {"using":"css selector","value":".color_to_pick_list"}
+RESULT: {"using":"css selector","value":".color_to_pick_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d2c6cbd8-0733-4072-bac2-535316c95295/elements - {"using":"css selector","value":".color_to_pick_list"}
+RESULT: {"using":"css selector","value":".color_to_pick_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d2c6cbd8-0733-4072-bac2-535316c95295/element - {"using":"css selector","value":".availability"}
+RESULT: {"using":"css selector","value":".availability"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d2c6cbd8-0733-4072-bac2-535316c95295/elements - {"using":"css selector","value":".availability"}
+RESULT: {"using":"css selector","value":".availability"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d497d0ce-fff8-4e7f-b109-7b894c54aa5f/element - {"using":"css selector","value":"img"}
+RESULT: {"using":"css selector","value":"img"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d497d0ce-fff8-4e7f-b109-7b894c54aa5f/elements - {"using":"css selector","value":"img"}
+RESULT: {"using":"css selector","value":"img"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d497d0ce-fff8-4e7f-b109-7b894c54aa5f/element - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d497d0ce-fff8-4e7f-b109-7b894c54aa5f/elements - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d497d0ce-fff8-4e7f-b109-7b894c54aa5f/element - {"using":"css selector","value":".product-price"}
+RESULT: {"using":"css selector","value":".product-price"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d497d0ce-fff8-4e7f-b109-7b894c54aa5f/elements - {"using":"css selector","value":".product-price"}
+RESULT: {"using":"css selector","value":".product-price"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d497d0ce-fff8-4e7f-b109-7b894c54aa5f/element - {"using":"css selector","value":".color_to_pick_list"}
+RESULT: {"using":"css selector","value":".color_to_pick_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d497d0ce-fff8-4e7f-b109-7b894c54aa5f/elements - {"using":"css selector","value":".color_to_pick_list"}
+RESULT: {"using":"css selector","value":".color_to_pick_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d497d0ce-fff8-4e7f-b109-7b894c54aa5f/element - {"using":"css selector","value":".availability"}
+RESULT: {"using":"css selector","value":".availability"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d497d0ce-fff8-4e7f-b109-7b894c54aa5f/elements - {"using":"css selector","value":".availability"}
+RESULT: {"using":"css selector","value":".availability"}
+]]></system-out>
+    </testcase>
+    <testcase classname="chrome.105_0_5195_127.windows.TC_001_Search_product" name="Should all products be dresses" time="10.156">
+      <failure/>
+      <error message="Expect $(`#product_list`).$$(`li.ajax_block_product`)[5].$(`.product-name`) to have text containing&#xA;&#xA;Expected: &quot;dress&quot;&#xA;Received: &quot;faded short sleeves t-shirt&quot;"/>
+      <system-out><![CDATA[
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element - {"using":"css selector","value":"#product_list"}
+RESULT: {"using":"css selector","value":"#product_list"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/7682e26c-6f61-4809-844c-93d33ef5302a/elements - {"using":"css selector","value":"li.ajax_block_product"}
+RESULT: {"using":"css selector","value":"li.ajax_block_product"}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/75b911c1-117c-4276-8751-c8d66a9e4664/element - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/b4c66021-ef21-4644-82dc-fb3d3cd713ca/text - {}
+RESULT: {}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/681e9999-d810-43d9-9036-195aaec66467/element - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/9200eb42-762a-4cd3-865d-11e4d1a29abb/text - {}
+RESULT: {}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/b40c51ed-3a31-4ee3-a9da-b42fee1b3b70/element - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/191de8a3-5b5b-40ec-afcd-839bb1f5b4d7/text - {}
+RESULT: {}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/268f8cc0-0397-47be-9377-7e0e5255c322/element - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/33ba12b7-0e78-42c5-977f-ec4abf847f37/text - {}
+RESULT: {}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/20528cda-e17c-4547-ae4d-58160c0f57af/element - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/26fca788-2e9e-4383-b80e-328e679a2623/text - {}
+RESULT: {}
+COMMAND: POST /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d2c6cbd8-0733-4072-bac2-535316c95295/element - {"using":"css selector","value":".product-name"}
+RESULT: {"using":"css selector","value":".product-name"}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: GET /session/4e2cac4cfcef4bcbbd97b746cc4583a8/element/d359898d-2d33-47e9-baa4-b6d2f01c6430/text - {}
+RESULT: {}
+COMMAND: DELETE /session/4e2cac4cfcef4bcbbd97b746cc4583a8 - {}
+RESULT: {}
+]]></system-out>
+      <system-err><![CDATA[
+Error: Expect $(`#product_list`).$$(`li.ajax_block_product`)[5].$(`.product-name`) to have text containing
+
+Expected: [32m"dress"[39m
+Received: [31m"faded short sleeves t-shirt"[39m
+    at Context.<anonymous> (C:\Users\ursar\TestingProjects\toptal\Ursa-Gorse\website_testing\test\specs\001_search.js:77:32)
+]]></system-err>
+    </testcase>
+  </testsuite>
+</testsuites>
