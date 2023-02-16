@@ -59,7 +59,7 @@ The test documentation is available [here]().
 ## LOAD testing
 ### Scope
 Load testing part includes load test for [Blaze demo](https://blazedemo.com) web application. 
-More details about this load test can be found [here]().
+More details about this load test can be found [here](https://github.com/Shugenya/testing_examples/blob/master/load_testing/README.md).
 
 ### Technologies
 The tool used for Load testing is [k6](https://k6.io/docs/). 
