@@ -54,7 +54,7 @@ The tool used for REST api test automation is [Postman](https://www.postman.com/
 3. Click "Run Food data" button
 
 ### Test documentation
-The test documentation is available [here]().
+The test documentation is available [here](https://github.com/Shugenya/testing_examples/blob/master/website_testing/docs/Test%20documentation.pdf).
 
 ## LOAD testing
 ### Scope
